@@ -1,17 +1,25 @@
-{
-    'author': 'Nagusika',
-    'description': 'Comprehensive Rocm SMI Monitoring Tool using rocm-smi',
-    'download_url': 'https://github.com/Nagusika/checkmk-rocm-plugin',
-    'files': {
-        'agent_based': ['/omd/sites/test/tmp/amd/agent/rocm-smi'],
-        'agents': ['/omd/sites/test/tmp/amd/server/rocm-smi'],
-        'checkman': ['/omd/sites/test/tmp/amd/checkman/rocm-smi'],
-        'cmk_addons_plugins': ['/omd/sites/test/tmp/amd/metrics/rocm-smi.py']
-    },
-    'name': 'rocm_smi',
-    'title': 'rocm_smi',
-    'version': '1.0.0',
-    'version.min_required': '2.3.0p13',
-    'version.packaged': 'cmk-mkp-tool 0.2.0',
-    'version.usable_until': None
-}
+{'author': 'Dylan',
+ 'description': 'This plugin provides comprehensive monitoring for AMD GPUs '
+                'using the rocm-smi command.\n'
+                '\n'
+                'Features:\n'
+                '\n'
+                '-  GPU Utilization Tracking\n'
+                '-  Memory Utilization Monitoring\n'
+                '-  Temperature Tracking\n'
+                '-  Power Consumption Monitoring (Draw)\n'
+                '-  SCLK Clock Frequency Monitoring\n'
+                '-  Performance Level Tracking\n'
+                '-  Memory Usage Monitoring\n'
+                '-  Number of Active Processes\n',
+ 'download_url': 'https://github.com/Nagusika/checkmk-rocm-plugin',
+ 'files': {'agents': ['plugins/rocm-smi'],
+           'cmk_addons_plugins': ['rocm_smi/agent_based/rocm_smi.py',
+                                  'rocm_smi/checkman/rocm_smi',
+                                  'rocm_smi/graphing/rocm_smi_graphing.py']},
+ 'name': 'rocm_smi',
+ 'title': 'ROCm SMI Monitoring Plugin',
+ 'version': '2.0.0',
+ 'version.min_required': '2.3.0b1',
+ 'version.packaged': '2.3.0p36',
+ 'version.usable_until': None}

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ROCM_SMI=$(which rocm-smi)
+
+if [ -x $ROCM_SMI ]; then
+
+  echo '<<<rocm_smi:sep(0)>>>'
+  $ROCM_SMI --alldevices --showid --showbus --showuse --showmemuse --showtemp --showpower --showpids --showgpuclocks --showperflevel --showdriverversion --json
+
+fi
+
+exit 0

@@ -1,0 +1,53 @@
+title: Performance Indicators of AMD GPU
+agents: linux
+catalog: app/gpu
+license: MIT
+distribution: check_mk
+description: >
+  Comprehensive monitoring of AMD GPUs using the rocm-smi command.
+  
+  Monitors key performance metrics including:
+  - GPU Utilization
+  - Memory Utilization
+  - Temperature
+  - Power Consumption (Draw)
+  - Memory Usage
+  - Number of Active Processes
+  - SCLK Clock Frequency
+  - Performance Level
+  
+  Provides detailed insights into GPU performance and health.
+
+inventory: >
+  One service per AMD GPU will be created.
+
+item: >
+  Each item represents a unique AMD GPU, identified by its GPU ID.
+
+parameters:
+  gpu_utilization_levels:
+    - warning
+    - critical
+  memory_utilization_levels:
+    - warning
+    - critical
+  temperature_levels:
+    - warning
+    - critical
+  power_draw_levels:
+    - warning
+    - critical
+  sclk_clock_freq_levels:
+    - warning
+    - critical
+  num_processes_levels:
+    - warning
+    - critical
+
+default_levels:
+  gpu_utilization_levels: [80, 90]
+  memory_utilization_levels: [80, 90]
+  temperature_levels: [75, 85]
+  power_draw_levels: [300, 350]        # Adjust based on your GPU's power specifications
+  sclk_clock_freq_levels: [1500, 2000] # Example thresholds in MHz; adjust as needed
+  num_processes_levels: [10, 20]
